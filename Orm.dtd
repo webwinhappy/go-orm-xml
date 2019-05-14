@@ -2,6 +2,7 @@
 <!ELEMENT mapper (sql* | insert* | update* | delete* | select* )+>
  <!ATTLIST mapper
   namespace CDATA #IMPLIED
+  tableName CDATA #IMPLIED
   >
 
  <!ELEMENT parameter EMPTY>
