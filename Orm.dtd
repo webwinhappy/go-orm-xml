@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!ELEMENT mapper (cache-ref | cache | resultMap* | parameterMap* | sql* | insert* | update* | delete* | select* )+>
+<!ELEMENT mapper (sql* | insert* | update* | delete* | select* )+>
  <!ATTLIST mapper
   namespace CDATA #IMPLIED
-  >
-
- <!ELEMENT cache-ref EMPTY>
- <!ATTLIST cache-ref
-  namespace CDATA #REQUIRED
-  >
-
- <!ELEMENT cache (property*)>
- <!ATTLIST cache
-  type CDATA #IMPLIED
-  eviction CDATA #IMPLIED
-  flushInterval CDATA #IMPLIED
-  size CDATA #IMPLIED
-  readOnly CDATA #IMPLIED
-  blocking CDATA #IMPLIED
-  >
-
- <!ELEMENT parameterMap (parameter+)?>
- <!ATTLIST parameterMap
-  id CDATA #REQUIRED
-  type CDATA #REQUIRED
   >
 
  <!ELEMENT parameter EMPTY>
@@ -34,14 +13,6 @@
   resultMap CDATA #IMPLIED
   scale CDATA #IMPLIED
   typeHandler CDATA #IMPLIED
-  >
-
- <!ELEMENT resultMap (constructor?,id*,result*,association*,collection*, discriminator?)>
- <!ATTLIST resultMap
-  id CDATA #REQUIRED
-  type CDATA #REQUIRED
-  extends CDATA #IMPLIED
-  autoMapping (true|false) #IMPLIED
   >
 
  <!ELEMENT constructor (idArg*,arg*)>
